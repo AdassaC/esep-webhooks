@@ -20,7 +20,7 @@ public class Function
     {
         dynamic json = JsonConvert.DeserializeObject<dynamic>(input.ToString());
         
-        string payload = $"{{'text':'Issue Created: https://github.com/AdassaC/esep-webhooks/issues/2'}}";
+        string payload = $"{{'text':'Issue Created: {json.issue.html_url}'}}";
 
         var client = new HttpClient();
         var webRequest = new HttpRequestMessage(HttpMethod.Post, "{do not check in this URL}")
